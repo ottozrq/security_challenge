@@ -1,0 +1,131 @@
+Email: livreur.adel@gmail.com
+Subject: [EPITA2018] your-subject-here
+
+Password of the encrypted volume: 3c7bc8f42a71dd221854ce8afa538d01
+
+Hello all,
+
+In order to prepare the next following classes, it is important to download and install:
+Kali Linux 2.0 [1] natively or in a VM (if you install it in a VM, please manage to make the File Sharing working. There are some tutorials that explain this well)
+Windows XP Virtual Machine [2].
+
+To import the Windows XP Virtual Machine .ova file, you need to:
+VirtualBox Manager => File => Import Appliance.
+Go to the VM settings and disable USB 2.0 and the file shared under File Sharing.
+
+Note: The "Kali Linux 64 bit LXDE" is very lite and adapted to low performance computers (it is my favorite version of Kali).
+
+Thank you,
+Adel
+
+[1] https://www.kali.org/downloads/
+[2] http://www.adeleda.com/WinXP_2017_AKH.ova
+
+
+
+Organization:
+~/projects/
+    template/
+        screenshots/
+            selective screen
+            start from pixel 0x0 of the window
+            do never resize an image
+            useful information 
+            no leak of personal information
+        vulnerabilities/
+            NN_Vulnerability_Name
+                screenshots_here ready to include in report
+            01_Cross_Site_Scripting
+            02_Directory_Listing
+            03_...
+        reports/
+            report_template.doc
+            report_pdf_file.pdf
+        others/
+            scripts/
+            softwares/
+            wordlists/
+        notes.txt
+            contains all useful information related to the project.
+            contact name, address, phone, ...
+            login, passwords, ...
+            explanation regarding the application
+    EPITA/
+        screenshots/
+        vulnerabilities/
+            NN_Vulnerability_Name
+                screenshots_here ready to include in report
+            01_Cross_Site_Scripting
+            02_Directory_Listing
+            03_...
+        reports/
+            report_template.doc
+            report_pdf_file.pdf
+        others/
+            scripts/
+            softwares/
+            wordlists/
+        notes.txt
+            contains all useful information related to the project.
+            contact name, address, phone, ...
+            login, passwords, ...
+            explanation regarding the application
+
+
+Vulnerabilities:
+
+01- Network traffic not encrypted
+    => to intercept network traffic we use WireShark
+    => the risk here is the leak of login/passwd of the users
+    => screenshots ?
+
+    criticity: critical
+    exploitation: easy
+    correction: easy
+02- Redirect to any website
+    => http://www.e-commune.org/accueil/accueil_visiteur.php?redirect=http://www.google.com
+
+03- Sensitive data found on hidden folders
+    www.e-commune.org/admin
+    found by using dirbuster
+
+04- System command execution through backdoor
+    www.e-commune.org/superadmin/test.php
+    found by inspecting the source code of the "Carte" page
+
+05- weak passwords accepted
+    admin/admin
+    agent/agent
+    chef/chef
+    ...
+
+06- technical information leakage
+    www.e-commune.org/page_not_exists
+    modify this url from:
+    http://www.e-commune.org/index.php?cat=&ncat=53&rub=service-des-finances-et-affaires-administratives&nrub=72&srub=bureau-etat-civil&nsrub=78
+    to => http://www.e-commune.org/index.php?cat=&ncat=53hhhhhhhhhhhhhhhhhhhhhhhhhhh&rub=service-des-finances-et-affaires-administratives&nrub=72&srub=bureau-etat-civil&nsrub=78
+
+
+
+
+
+Report :
+    page 1 : cover page
+    page 2 : synthesis
+        a- general scope, target, dates, explanation about the application
+        b- category of vulnerabilities + count found
+        c- general recommendation
+    page 3 : summary
+    page 4+: vulnerability sheet
+        a- title
+        b- indicators of criticity
+            criticity (business risk): critical, medium, low risk impact of this vulnerability regarding the business of our customer
+            exploitation easiness: hard, medium, easy to exploit
+            correction easiness: hard, medium, easy to fix
+
+        c- description (no screenshort)
+        d- exploitation (screenshots here + centered in the middle of the page + text before & after img)
+        e- recommendation (how to fix the vulnerability)
+
+
+Report should be sent by mail before saturday 26 may 2018 23h55
